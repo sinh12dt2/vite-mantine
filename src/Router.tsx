@@ -1,6 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { HomePage } from './pages/Home.page'
-import { SamplePage } from './pages/Sample.page'
+import { lazy } from 'react'
+import { DefaultLayout } from './layout/DefaultLayout'
+
+const HomePage = lazy(() => import('@/pages/Home.page'))
+const SamplePage = lazy(() => import('@/pages/Sample.page'))
+const SamplePage2 = lazy(() => import('@/pages/Sample2.page'))
+const Settings = lazy(() => import('@/pages/Settings.page'))
 
 const router = createBrowserRouter([
   {
@@ -8,8 +13,22 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: '/sample',
-    element: <SamplePage />,
+    path: '/',
+    element: <DefaultLayout />,
+    children: [
+      {
+        path: '/sample',
+        element: <SamplePage />,
+      },
+      {
+        path: '/sample2',
+        element: <SamplePage2 />,
+      },
+      {
+        path: '/settings',
+        element: <Settings />,
+      },
+    ],
   },
 ])
 

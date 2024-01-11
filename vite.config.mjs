@@ -7,13 +7,13 @@ export default defineConfig({
   plugins: [
     react(),
     tsconfigPaths(),
-    ViteCompressionPlugin({
-      verbose: true,
-      disable: false,
-      threshold: 10240,
-      algorithm: 'gzip',
-      ext: '.gz',
-    }),
+    // ViteCompressionPlugin({
+    //   verbose: true,
+    //   disable: false,
+    //   threshold: 10240,
+    //   algorithm: 'gzip',
+    //   ext: '.gz',
+    // }),
   ],
   test: {
     globals: true,

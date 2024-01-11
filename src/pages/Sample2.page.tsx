@@ -10,7 +10,7 @@ import {
 } from '@tabler/icons-react'
 import { Link } from 'react-router-dom'
 
-export default function SamplePage() {
+export default function SamplePage2() {
   const [drawerOpened, drawerAct] = useDisclosure(false)
   return (
     <>
